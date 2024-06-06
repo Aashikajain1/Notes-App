@@ -12,7 +12,7 @@ function NewNote() {
   const loadNote = async (id) => {
     if(!id) return
 
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/notes/${id}`)
+    const response = await axios.get(`http://localhost:5000/notes`)
 
     setTitle(response.data.data.title)
     setCategory(response.data.data.category)

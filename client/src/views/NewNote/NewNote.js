@@ -9,7 +9,7 @@ function NewNote() {
   const [content, setContent] = useState('');
 
   const addNote = async() => {
-    const response = await axios.post(`${process.env.REACT_APP_API_URL}/notes`,
+    const response = await axios.post(`${process.env.REACT_APP}/notes`,
     {
       title: title,
       category: category,
