@@ -15,9 +15,9 @@ function NoteCard({ _id, title, content, category, loadNotes }) {
   }
 
   return (
-    <div className='note-card'>
-      <h3 className='note-card-title'>{title}</h3>
-      <p className='note-card-content'>{content}</p>
+    <div className='card px-1 py-3 w-50 mb-4' style={{marginLeft:"25%",boxShadow:"0 0 10px 0 rgba(0, 0, 0, 0.1)",cursor:"pointer"}}>
+      <h3>{title}</h3>
+      <p>{content}</p>
       <span className='note-card-category'>{category}</span>
       <img src={DeleteIcon}
         alt='delete-icon'

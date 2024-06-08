@@ -59,16 +59,8 @@ function NewNote() {
         <button
           type='button'
           onClick={addNote}
-          style={ {
-            backgroundColor: "black",
-            display: "block",
-            margin: "20px auto",
-            color: "white",
-            fontSize: "30px",
-            padding: "10px 40px",
-            border: "none",
-            borderRadius: "30px",          }}
-          className='button-save'>
+          style={{margin: "20px auto"}}
+          className='bg-black text-white fs-3 px-4 py-3 border-0 rounded-pill d-block'>
           Save
         </button>
       </form>
