@@ -1,7 +1,7 @@
 import React from 'react'
 import './NoteCard.css'
-import DeleteIcon from "./delete-icon.png"
-import UpdateIcon from "./update-icon.png"
+import DeleteIcon from "./trash.png"
+import UpdateIcon from "./pen-circle.png"
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
