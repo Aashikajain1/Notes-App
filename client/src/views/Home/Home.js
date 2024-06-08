@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <div>
-      <h1 className='app-header'>All Notes</h1>
+      <h1 className='text-center text-light'>All Notes</h1>
 
       {
         notes.map((note) => {

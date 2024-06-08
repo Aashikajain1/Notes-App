@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './UpdateNote.css'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useParams } from 'react-router-dom'
@@ -12,7 +11,7 @@ function NewNote() {
   const loadNote = async (id) => {
     if(!id) return
 
-    const response = await axios.get(`http://localhost:5000/notes`)
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/notes`)
 
     setTitle(response.data.data.title)
     setCategory(response.data.data.category)
@@ -39,13 +38,13 @@ function NewNote() {
 
   return (
     <div>
-      <h1 className='app-header'>Update Note</h1>
+      <h1 className='text-center text-light fs-1'>Update Note</h1>
 
-      <form className='form-new-note'>
+      <form className='bg-light w-50 p-4 rounded'style={{margin:"50px auto"}}>
         <input type='text'
           value={id}
           disabled
-          className='input-id'
+          className='w-100 py-2 fs-5 mb-4'
           />
 
         <input type='text'
@@ -54,14 +53,14 @@ function NewNote() {
           onChange={(e) => {
             setTitle(e.target.value)
           }}
-          className='input-title'
+          className='w-100 py-2 fs-4 mb-4'
         />
 
         <select value={category}
           onChange={(e) => {
             setCategory(e.target.value)
           }}
-          className='input-category'>
+          className='w-100 py-2 fs-5 mb-4'>
           <option value="">Select a category</option>
           <option value="general">General</option>
           <option value="work">Work</option>
@@ -73,7 +72,7 @@ function NewNote() {
         <input type='text'
           placeholder="Content"
           value={content}
-          className='input-content'
+          className='w-100 py-2 fs-4 mb-4'
           onChange={(e) => {
             setContent(e.target.value)
           }} />
@@ -81,8 +80,7 @@ function NewNote() {
         <button
           type='button'
           onClick={updateNote}
-          className='button-save'
-        >
+          className='bg-black text-white fs-3 px-4 py-3 border border-0 rounded-pill d-block ' style={{cursor:"pointer",margin:"20px auto"}}>
           Update
         </button>
       </form>

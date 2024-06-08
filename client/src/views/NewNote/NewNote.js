@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import './NewNote.css'
-import axios from 'axios'
+import axios from 'axios';
 import toast from 'react-hot-toast'
 
 function NewNote() {
@@ -9,7 +8,7 @@ function NewNote() {
   const [content, setContent] = useState('');
 
   const addNote = async() => {
-    const response = await axios.post(`${process.env.REACT_APP}/notes`,
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/notes`,
     {
       title: title,
       category: category,
@@ -24,23 +23,23 @@ function NewNote() {
 
   return (
     <div>
-      <h1 className='app-header'>NewNote</h1>
+      <h1 className='text-center mb-3 text-light'>NewNote</h1>
 
-      <form className='form-new-note'>
+      <form className='bg-light w-50 h-25 px-5 py-5 border-rounded' style={{marginLeft:"25%",boxShadow:"0 0 10px rgb(255,255,255)"}}>
         <input type='text'
           placeholder="Title"
           value={title}
           onChange={(e)=>{
             setTitle(e.target.value)
           }}
-          className='input-title'
+          className='w-100 fs-4 py-2 mb-4'
           />
 
         <select value={category}
           onChange={(e)=>{
             setCategory(e.target.value)
           }}
-          className='input-category'>
+          className='w-100 fs-4 py-2 mb-4'>
           <option value="">Select a category</option>
           <option value="general">General</option>
           <option value="work">Work</option>
@@ -52,7 +51,7 @@ function NewNote() {
         <input type='text'
           placeholder="Content"
           value={content}
-          className='input-content'
+          className='w-100 fs-4 py-2 mb-4'
           onChange={(e)=>{
             setContent(e.target.value)
           }} />
@@ -60,8 +59,16 @@ function NewNote() {
         <button
           type='button'
           onClick={addNote}
-          className='button-save'
-          >
+          style={ {
+            backgroundColor: "black",
+            display: "block",
+            margin: "20px auto",
+            color: "white",
+            fontSize: "30px",
+            padding: "10px 40px",
+            border: "none",
+            borderRadius: "30px",          }}
+          className='button-save'>
           Save
         </button>
       </form>
